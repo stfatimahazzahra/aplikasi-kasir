@@ -17,22 +17,22 @@ class ManajerController extends Controller
         return view('manajer.create');
     }
 
-    public function menu(Request $request)
+    public function menu(Request $request) 
     {
         $request->validate([
             'nama_menu' => 'required',
             'harga' => 'required',
             'deskripsi' => 'required',
-            'ketersediaan' => 'required'
+            'keteserdiaan' => 'required'
         ]);
 
         Menu::create([
-            'nama_menu' => $request->nama_menu,
-            'harga' => $request->harga,
-            'deskripsi' => $request->deskripsi,
-            'keteserdiaan' => $request->keteserdiaan
+            'nama_menu' => $request['nama_menu'],
+            'harga' => $request['harga'],
+            'deskripsi' => $request['deskripsi'],
+            'keteserdiaan' => $request['keteserdiaan'],
         ]);
 
-        return redirect('manajer/menu');
+        return redirect('/manajer');
     }
 }

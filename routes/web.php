@@ -36,4 +36,4 @@ Route::get('/kasir/create', [KasirController::class, 'create']);
 
 Route::get('/manajer', [ManajerController::class, 'index'])->name('manajer');
 Route::get('/manajer/create', [ManajerController::class, 'create']);
-Route::post('/manajer/menu', [ManajerController::class, 'menu']);
+Route::post('/manager/menu', [ManajerController::class, 'menu']);

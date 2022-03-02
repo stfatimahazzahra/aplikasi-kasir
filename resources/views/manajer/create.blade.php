@@ -81,7 +81,7 @@
                     <!-- ============================================================== -->
                     <!-- Toggle which is visible on mobile only -->
                     <!-- ============================================================== -->
-                    
+
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -119,10 +119,12 @@
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#"
+                                id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="../../assets/images/users/6.jpg" alt="user" class="rounded-circle" width="31">
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
+                            <ul class="dropdown-menu dropdown-menu-end user-dd animated"
+                                aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/login"><i class="ti-user me-1 ms-1"></i>Log Out</a>
                         </li>
                     </ul>
@@ -190,28 +192,28 @@
                             </nav>
                         </div>
                     </div>
-                    <form method="post" action="/manajer/menu">
+                    <form method="POST" action="/manager/menu">
                         @csrf
-                <table>
-                    <tr>
-                        <td>Nama Menu :</td>
-                        <td><input type="text" name="nama_menu"></td>
-                    </tr>
-                    <tr>
-                        <td>Harga :</td>
-                        <td><input type="number" name="harga"></td>
-                    </tr>
-                    <tr>
-                        <td>Deskripsi :</td>
-                        <td><input type="text" name="deskripsi"></td>
-                    </tr>
-                    <tr>
-                        <td>Keteserdiaan :</td>
-                        <td><input type="number" name="keteserdiaan"></td>
-                    </tr>
-                </table>
-                <button type="submit" class="btn btn-danger">Submit</button>
-            </form>
+                        <table>
+                            <tr>
+                                <td>Nama Menu :</td>
+                                <td><input type="text" name="nama_menu"></td>
+                            </tr>
+                            <tr>
+                                <td>Harga :</td>
+                                <td><input type="number" name="harga"></td>
+                            </tr>
+                            <tr>
+                                <td>Deskripsi :</td>
+                                <td><input type="text" name="deskripsi"></td>
+                            </tr>
+                            <tr>
+                                <td>Keteserdiaan :</td>
+                                <td><input type="number" name="keteserdiaan"></td>
+                            </tr>
+                        </table>
+                        <button type="submit" class="btn btn-danger">Submit</button>
+                    </form>
 
                 </div>
             </div>
