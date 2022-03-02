@@ -17,8 +17,8 @@ class CreateTransaksiTable extends Migration
             $table->id();
             $table->string('nama_pelanggan');
             $table->string('nama_menu');
-            $table->string('jumlah');
-            $table->string('total_harga');
+            $table->integer('jumlah');
+            $table->integer('total_harga');
             $table->string('nama_pegawai');
             $table->timestamps();
         });

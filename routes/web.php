@@ -28,6 +28,12 @@ Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::get('/admin/create', [AdminController::class, 'create']);
 Route::post('/admin/user', [AdminController::class, 'user']);
 Route::get('/admin/edit/{id}', [AdminController::class, 'edit']);
+Route::post('/admin/update/{id}', [AdminController::class, 'update']);
+Route::get('/admin/delete/{id}', [AdminController::class, 'delete']);
 
 Route::get('/kasir', [KasirController::class, 'index'])->name('kasir');
+Route::get('/kasir/create', [KasirController::class, 'create']);
+
 Route::get('/manajer', [ManajerController::class, 'index'])->name('manajer');
+Route::get('/manajer/create', [ManajerController::class, 'create']);
+Route::post('/manajer/menu', [ManajerController::class, 'menu']);

@@ -200,7 +200,7 @@
                             <td>
                                 <a class="btn btn-primary" href="admin/edit/{{ $names->id }}">Edit</a>
                         
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <a href="admin/delete/{{ $names->id }}" ><button type="button" class="btn btn-danger">Delete</button></a>
                             </td>
                         </tr>
                         @endforeach

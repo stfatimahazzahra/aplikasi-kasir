@@ -191,24 +191,24 @@
                             </nav>
                         </div>
                     </div>
-                    <form method="post" action="/admin/update/{{ $users->id }}">
+                    <form method="post" action="/admin/update/">
                         @csrf
                 <table>
                     <tr>
                         <td>Nama :</td>
-                        <td><input type="text" name="name" value="{{ $users->name }}" class="form-control"></td>
+                        <td><input type="text" name="name" class="form-control"></td>
                     </tr>
                     <tr>
                         <td>Usernama :</td>
-                        <td><input type="text" name="username" value="{{ $users->username }}" class="form-control"></td>
+                        <td><input type="text" name="username" class="form-control"></td>
                     </tr>
                     <tr>
                         <td>Password :</td>
-                        <td><input type="password" name="password" value="{{ $users->password }}" class="form-control"></td>
+                        <td><input type="password" name="password" class="form-control"></td>
                     </tr>
                     <tr>
                         <td>Role :</td>
-                        <td><input type="text" name="role" value="{{ $users->role }}" class="form-control"></td>
+                        <td><input type="text" name="role" class="form-control"></td>
                     </tr>
                 </table>
                 <button type="submit" class="btn btn-primary">Submit</button>

@@ -120,11 +120,10 @@
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="../../assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31">
+                                <img src="../../assets/images/users/6.jpg" alt="user" class="rounded-circle" width="31">
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/login"><i class="ti-user me-1 ms-1"></i>Log Out</a>
-                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -191,27 +190,31 @@
                             </nav>
                         </div>
                     </div>
-                    <form method="post" action="/admin/update/{{ $users->id }}">
+                    <form method="POST" action="/admin/user">
                         @csrf
                 <table>
                     <tr>
-                        <td>Nama :</td>
-                        <td><input type="text" name="name" value="{{ $users->name }}" class="form-control"></td>
+                        <td>Nama Pelanggan :</td>
+                        <td><input type="text" name="nama_pelanggan"></td>
                     </tr>
                     <tr>
-                        <td>Usernama :</td>
-                        <td><input type="text" name="username" value="{{ $users->username }}" class="form-control"></td>
+                        <td>Menu :</td>
+                        <td><input type="text" name="menu"></td>
                     </tr>
                     <tr>
-                        <td>Password :</td>
-                        <td><input type="password" name="password" value="{{ $users->password }}" class="form-control"></td>
+                        <td>Jumlah :</td>
+                        <td><input type="text" name="jumlah"></td>
                     </tr>
                     <tr>
-                        <td>Role :</td>
-                        <td><input type="text" name="role" value="{{ $users->role }}" class="form-control"></td>
+                        <td>Total :</td>
+                        <td><input type="text" name="role"></td>
+                    </tr>
+                    <tr>
+                        <td>Nama Pegawai :</td>
+                        <td><input type="text" name="role"></td>
                     </tr>
                 </table>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-danger">Submit</button>
             </form>
 
                 </div>
