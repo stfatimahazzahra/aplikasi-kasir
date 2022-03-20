@@ -137,31 +137,18 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin"
                                 aria-expanded="false">
                                 <i class="mdi mdi-av-timer"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/login"
-                                aria-expanded="false">
-                                <i class="mdi mdi-account-network"></i>
-                                <span class="hide-menu">Profile</span>
-                            </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="form-basic.html"
-                                aria-expanded="false">
-                                <i class="mdi mdi-arrange-bring-forward"></i>
-                                <span class="hide-menu">Form Basic</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="table-basic.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin"
                                 aria-expanded="false">
                                 <i class="mdi mdi-border-none"></i>
-                                <span class="hide-menu">Table</span>
+                                <span class="hide-menu">User</span>
                             </a>
                         </li>
                     </ul>
@@ -199,7 +186,6 @@
                             <td>{{ $names->role }}</td>
                             <td>
                                 <a class="btn btn-primary" href="admin/edit/{{ $names->id }}">Edit</a>
-                        
                                 <a href="admin/delete/{{ $names->id }}" ><button type="button" class="btn btn-danger">Delete</button></a>
                             </td>
                         </tr>

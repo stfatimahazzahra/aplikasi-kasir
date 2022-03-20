@@ -136,31 +136,17 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin"
                                 aria-expanded="false">
                                 <i class="mdi mdi-av-timer"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-profile.html"
-                                aria-expanded="false">
-                                <i class="mdi mdi-account-network"></i>
-                                <span class="hide-menu">Profile</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="form-basic.html"
-                                aria-expanded="false">
-                                <i class="mdi mdi-arrange-bring-forward"></i>
-                                <span class="hide-menu">Form Basic</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="table-basic.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/admin"
                                 aria-expanded="false">
                                 <i class="mdi mdi-border-none"></i>
-                                <span class="hide-menu">Table</span>
+                                <span class="hide-menu">User</span>
                             </a>
                         </li>
                     </ul>
@@ -195,19 +181,19 @@
                 <table>
                     <tr>
                         <td>Nama :</td>
-                        <td><input type="text" name="name"></td>
+                        <td><input type="text" name="name" class="form-control"></td>
                     </tr>
                     <tr>
                         <td>Usernama :</td>
-                        <td><input type="text" name="username"></td>
+                        <td><input type="text" name="username" class="form-control"></td>
                     </tr>
                     <tr>
                         <td>Password :</td>
-                        <td><input type="password" name="password"></td>
+                        <td><input type="password" name="password" class="form-control"></td>
                     </tr>
                     <tr>
                         <td>Role :</td>
-                        <td><input type="text" name="role"></td>
+                        <td><input type="text" name="role" class="form-control"></td>
                     </tr>
                 </table>
                 <button type="submit" class="btn btn-danger">Submit</button>

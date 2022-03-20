@@ -33,7 +33,11 @@ Route::get('/admin/delete/{id}', [AdminController::class, 'delete']);
 
 Route::get('/kasir', [KasirController::class, 'index'])->name('kasir');
 Route::get('/kasir/create', [KasirController::class, 'create']);
+Route::post('/kasir/transaksi', [KasirController::class, 'transaksi']);
 
 Route::get('/manajer', [ManajerController::class, 'index'])->name('manajer');
 Route::get('/manajer/create', [ManajerController::class, 'create']);
-Route::post('/manager/menu', [ManajerController::class, 'menu']);
+Route::post('/manajer/menu', [ManajerController::class, 'menu']);
+Route::get('/manajer/edit/{id}', [ManajerController::class, 'edit']);
+Route::post('/manajer/update/{id}', [ManajerController::class, 'update']);
+Route::get('/manajer/delete/{id}', [ManajerController::class, 'delete']);

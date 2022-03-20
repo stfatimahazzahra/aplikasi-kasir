@@ -136,31 +136,17 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/create"
                                 aria-expanded="false">
                                 <i class="mdi mdi-av-timer"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-profile.html"
-                                aria-expanded="false">
-                                <i class="mdi mdi-account-network"></i>
-                                <span class="hide-menu">Profile</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="form-basic.html"
-                                aria-expanded="false">
-                                <i class="mdi mdi-arrange-bring-forward"></i>
-                                <span class="hide-menu">Form Basic</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="table-basic.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/create"
                                 aria-expanded="false">
                                 <i class="mdi mdi-border-none"></i>
-                                <span class="hide-menu">Table</span>
+                                <span class="hide-menu">Transaksi</span>
                             </a>
                         </li>
                     </ul>
@@ -183,38 +169,34 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="/admin">Home</a>
+                                        <a href="/kasir">Home</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                                 </ol>
                             </nav>
                         </div>
                     </div>
-                    <form method="POST" action="/admin/user">
+                    <form method="post" action="/kasir/transaksi">
                         @csrf
                 <table>
                     <tr>
                         <td>Nama Pelanggan :</td>
-                        <td><input type="text" name="nama_pelanggan"></td>
+                        <td><input type="text" name="nama_pelanggan" class="form-control"></td>
                     </tr>
                     <tr>
                         <td>Menu :</td>
-                        <td><input type="text" name="menu"></td>
+                        <td><select name="menu" class="form-control">
+                            @foreach ($menus as $menu)
+                                <option value="{{ $menu }}">{{ $menu }}</option>
+                            @endforeach
+                        </select></td>
                     </tr>
                     <tr>
                         <td>Jumlah :</td>
-                        <td><input type="text" name="jumlah"></td>
-                    </tr>
-                    <tr>
-                        <td>Total :</td>
-                        <td><input type="text" name="role"></td>
-                    </tr>
-                    <tr>
-                        <td>Nama Pegawai :</td>
-                        <td><input type="text" name="role"></td>
+                        <td><input type="number" name="jumlah" class="form-control"></td>
                     </tr>
                 </table>
-                <button type="submit" class="btn btn-danger">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
 
                 </div>
