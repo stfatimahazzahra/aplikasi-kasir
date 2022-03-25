@@ -24,6 +24,8 @@ Route::get('/', function () {
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authanticate']);
 
+Route::post('/cari-menu', [KasirController::class, 'cariMenu']);
+
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::get('/admin/create', [AdminController::class, 'create']);
 Route::post('/admin/user', [AdminController::class, 'user']);
@@ -34,6 +36,9 @@ Route::get('/admin/delete/{id}', [AdminController::class, 'delete']);
 Route::get('/kasir', [KasirController::class, 'index'])->name('kasir');
 Route::get('/kasir/create', [KasirController::class, 'create']);
 Route::post('/kasir/transaksi', [KasirController::class, 'transaksi']);
+Route::get('/kasir/edit/{id}', [KasirController::class, 'edit']);
+Route::post('/kasir/update/{id}', [KasirController::class, 'update']);
+Route::get('/kasir/delete/{id}', [KasirController::class, 'delete']);
 
 Route::get('/manajer', [ManajerController::class, 'index'])->name('manajer');
 Route::get('/manajer/create', [ManajerController::class, 'create']);
@@ -41,3 +46,5 @@ Route::post('/manajer/menu', [ManajerController::class, 'menu']);
 Route::get('/manajer/edit/{id}', [ManajerController::class, 'edit']);
 Route::post('/manajer/update/{id}', [ManajerController::class, 'update']);
 Route::get('/manajer/delete/{id}', [ManajerController::class, 'delete']);
+Route::get('/manajer/laporan', [ManajerController::class, 'laporan']);
+Route::get('/manajer/export-pdf', [ManajerController::class, 'exportPDF']);

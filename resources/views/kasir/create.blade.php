@@ -162,7 +162,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-5 align-self-center">
-                        <h4 class="page-title">Dashboard</h4>
+                        <h4 class="page-title">Create Transaksi</h4>
                     </div>
                     <div class="col-7 align-self-center">
                         <div class="d-flex align-items-center justify-content-end">
@@ -185,11 +185,15 @@
                     </tr>
                     <tr>
                         <td>Menu :</td>
-                        <td><select name="menu" class="form-control">
+                        <td><select name="nama_menu" class="form-control" onchange="getHarga($(this).val())">
                             @foreach ($menus as $menu)
-                                <option value="{{ $menu }}">{{ $menu }}</option>
+                                <option value="{{ $menu->nama_menu }}">{{ $menu->nama_menu }} - (Keteserdiaan : {{$menu->keteserdiaan}})</option>
                             @endforeach
                         </select></td>
+                    </tr>
+                    <tr>
+                        <td>Harga :</td>
+                        <td><input type="number" name="harga" id="harga" class="form-control"></td>
                     </tr>
                     <tr>
                         <td>Jumlah :</td>
@@ -223,6 +227,24 @@
     <script src="../../assets/libs/chartist/dist/chartist.min.js"></script>
     <script src="../../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
     <script src="../../dist/js/pages/dashboards/dashboard1.js"></script>
+    <script>
+        function getHarga(nama_menu) {
+            $.ajax({
+                url: '/cari-menu',
+                data: {
+                    _token: "{{ csrf_token() }}", 
+                    nama_menu
+                },
+                type: 'POST',
+                success: (menu) => {
+                    $('#harga').val(menu.harga)
+                },
+                error: (error) => {
+                    console.log(error);
+                }
+            })
+        }
+    </script>
 </body>
 
 </html>

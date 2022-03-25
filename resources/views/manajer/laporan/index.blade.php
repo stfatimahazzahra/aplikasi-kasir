@@ -169,32 +169,28 @@
             <div class="row">
                <div class="col-5 align-self-center">
                   <h4 class="page-title">Dashboard Manager</h4>
+                  <a href="/manajer/export-pdf" class="btn btn-danger mt-3 mb-3">Export PDF</a>
                </div>
-               <br><br>
-               <div class="create">
-                  <a class="btn btn-success" href="/manajer/create">Create</a>
-               </div>
-               <br><br>
+               
                <table class="table table-bordered">
                   <tr>
                      <th>No</th>
-                     <th>Nama Menu</th>
-                     <th>Harga</th>
-                     <th>Deskripsi</th>
-                     <th>Keteserdiaan</th>
-                     <th width="280px">Action</th>
+                     <th>Nama Pelanggan</th>
+                     <th>Menu</th>
+                     <th>Jumlah</th>
+                     <th>Total</th>
+                     <th>Nama Pegawai</th>
+                     <th>Tanggal</th>
                   </tr>
-                  @foreach ($menus as $index => $menu)
+                  @foreach($laporan as $lp)
                   <tr>
-                     <td>{{ $index+1 }}</td>
-                     <td>{{ $menu->nama_menu }}</td>
-                     <td>{{ 'Rp ' . number_format($menu->harga) }}</td>
-                     <td>{{ $menu->deskripsi }}</td>
-                     <td>{{ $menu->keteserdiaan }}</td>
-                     <td>
-                        <a class="btn btn-primary" href="/manajer/edit/{{ $menu->id }}">Edit</a>
-                        <a href="/manajer/delete/{{ $menu->id }}"><button type="button" class="btn btn-danger">Delete</button></a>
-                     </td>
+                      <td>{{ $loop->iteration }}</td>
+                      <td>{{ $lp->nama_pelanggan }}</td>
+                      <td>{{ $lp->nama_menu }}</td>
+                      <td>{{ $lp->jumlah }}</td>
+                      <td>{{ 'Rp ' . number_format($lp->total_harga) }}</td>
+                      <td>{{ $lp->nama_pegawai }}</td>
+                      <td>{{ date('d-m-Y', strtotime($lp->created_at)) }}</td>
                   </tr>
                   @endforeach
                </table>

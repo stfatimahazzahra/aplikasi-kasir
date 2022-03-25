@@ -123,8 +123,7 @@
                                 <img src="../../assets/images/users/6.jpg" alt="user" class="rounded-circle" width="31">
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/login"><i class="ti-user me-1 ms-1"></i>Log out</a>
-                            </ul>
+                                <a class="dropdown-item" href="/login"><i class="ti-user me-1 ms-1"></i>Log Out</a>
                         </li>
                     </ul>
                 </div>
@@ -137,15 +136,14 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/kasir"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/create"
                                 aria-expanded="false">
                                 <i class="mdi mdi-av-timer"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
-                        </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/kasir"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/create"
                                 aria-expanded="false">
                                 <i class="mdi mdi-border-none"></i>
                                 <span class="hide-menu">Transaksi</span>
@@ -158,41 +156,52 @@
             <!-- End Sidebar scroll-->
         </aside>
         <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-5 align-self-center">
-                        <h4 class="page-title">Dashboard Kasir</h4>
+                        <h4 class="page-title">Edit Transaksi</h4>
                     </div>
-                    <br><br>
-                    <div class="create">
-                        <a class="btn btn-success" href="/kasir/create">Create</a>
+                    <div class="col-7 align-self-center">
+                        <div class="d-flex align-items-center justify-content-end">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="/kasir">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                                </ol>
+                            </nav>
+                        </div>
                     </div>
-                    <br><br>
-                    <table class="table table-bordered">
-                        <tr>
-                            <th>No</th>
-                            <th>Nama Pelanggan</th>
-                            <th>Menu</th>
-                            <th>Jumlah</th>
-                            <th>Total</th>
-                            <th>Nama Pegawai</th>
-                            <th width="280px">Action</th>
-                        </tr>
-                        @foreach ($transaksis as $transaksi)
-                        <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $transaksi->nama_pelanggan }}</td>
-                            <td>{{ $transaksi->nama_menu }}</td>
-                            <td>{{ $transaksi->jumlah }}</td>
-                            <td>{{ 'Rp '. number_format($transaksi->total_harga) }}</td>
-                            <td>{{ $transaksi->nama_pegawai }}</td>
-                            <td>
-                                <a class="btn btn-primary" href="/kasir/edit/{{ $transaksi->id }}">Edit</a>
-                                <a href="/kasir/delete/{{ $transaksi->id }}" onclick="return confirm('Apa kamu yakin ingin menghapus?')"><button type="button" class="btn btn-danger">Delete</button></a>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </table>
+                    <form method="post" action="/kasir/update/{{ $transaksi->id }}">
+                        @csrf
+                        <input type="hidden" name="jumlah_lama" value="{{ $transaksi->jumlah }}">
+                <table>
+                    <tr>
+                        <td>Nama Pelanggan :</td>
+                        <td><input type="text" name="nama_pelanggan" class="form-control" value="{{ $transaksi->nama_pelanggan }}"></td>
+                    </tr>
+                    <tr>
+                        <td>Menu :</td>
+                        <td>
+                            <select name="nama_menu" class="form-control">
+                                @foreach ($menus as $menu)
+                                <option value="{{ $menu }}" @if($menu == $transaksi->nama_menu) selected @endif>{{ $menu }}</option>
+                                @endforeach
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jumlah :</td>
+                        <td><input type="number" name="jumlah" class="form-control" value="{{ $transaksi->jumlah }}"></td>
+                    </tr>
+                </table>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
                 </div>
             </div>
             <footer class="footer text-center">

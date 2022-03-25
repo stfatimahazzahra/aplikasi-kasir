@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Menu;
+use App\Models\Transaksi;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Str;
 
 class ManajerController extends Controller
 {
@@ -66,5 +69,21 @@ class ManajerController extends Controller
     {
         Menu::find($id)->delete();
         return redirect('/manajer');
+    }
+
+    public function laporan()
+    {
+        $laporan = Transaksi::all();
+        return view('manajer.laporan.index', ['laporan' => $laporan]);
+    }
+
+    public function exportPDF()
+    {
+        $data = [
+            'transaksis' => Transaksi::all(),
+        ];
+
+        $pdf = PDF::loadView('manajer.laporan.laporan-pdf', $data);
+        return $pdf->download(Str::random(20) . '.pdf');
     }
 }
